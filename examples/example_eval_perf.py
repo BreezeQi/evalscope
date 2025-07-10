@@ -4,15 +4,38 @@ from evalscope.perf.main import run_perf_benchmark
 
 def run_perf():
     task_cfg = {
-        'url': 'http://127.0.0.1:8000/v1/chat/completions',
+        'url': 'http://1.15.50.14:4043/api/aidong/kbqa/adrag_chat',
         'parallel': 1,
-        'model': 'qwen2.5',
-        'number': 15,
+        'model': 'linde',
+        'number': 1,
         'api': 'openai',
-        'dataset': 'openqa',
+        'dataset': 'custom',
+        'dataset_path': 'E:/workspace/evalscope/examples/test.jsonl',
+        'apply_chat_template': True,
+        'stream': True,
         'debug': True,
+        'api_key': 'sk-z-UEJeKLUkUvN8sYfWl9gw',
+        'max_prompt_length': 320000,
+        'min_prompt_length': 0,
+        'max_tokens': 320000,
+        'min_tokens': 0,
     }
     run_perf_benchmark(task_cfg)
+    
+# def run_perf():
+#     task_cfg = {
+#         'url': 'http://llm-api.forklift-ai.com/v1/chat/completions',
+#         'parallel': 1,
+#         'model': 'qwen-max',
+#         'number': 1,
+#         'api': 'openai',
+#         'dataset': 'custom',
+#         'dataset_path': 'E:/workspace/evalscope/examples/test.jsonl',
+#         'stream': True,
+#         'debug': True,
+#         'api_key': 'sk-z-UEJeKLUkUvN8sYfWl9gw',
+#     }
+#     run_perf_benchmark(task_cfg)
 
 
 def run_perf_stream():
@@ -49,6 +72,7 @@ def run_perf_local():
         'api': 'local',
         'dataset': 'openqa',
         'debug': True,
+        'dataset_path': 'E:/workspace/evalscope/examples/test.jsonl',
     }
     run_perf_benchmark(task_cfg)
 
@@ -94,4 +118,6 @@ def run_perf_local_custom_prompt():
 
 
 if __name__ == '__main__':
+    run_perf()
+    pass
     run_perf_local_custom_prompt()

@@ -1,0 +1,8 @@
+{
+    "enabled": true,
+    "user_id": "user66bc707e62bdb86871ef345b",
+    "kb_ids": ["kb2bf6ce06c6d645ab9c33478b88178c92"],
+    "websearch": false,
+    "imageRecognition": true,
+    "iterations": 1
+}
